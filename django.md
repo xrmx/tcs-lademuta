@@ -202,12 +202,6 @@ def new_todo(request):
     else:
         form = TodoForm()
     return render(request, "todo/new.html", {'form': form})
-
-def add_item(request, todo_id):
-    pass # same pattern as new todo :)
-
-def remove_item(request, todo_id, item_id):
-    pass # not enough vertical space sorry
 ~~~
 
 
@@ -312,6 +306,7 @@ Migrations for 'todo':
   0001_initial.py:
     - Create model Todo
     - Create model TodoItem
+
 $ ./manage.py migrate
 Operations to perform:
   Apply all migrations: admin, contenttypes, auth, sessions, todo

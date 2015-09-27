@@ -41,28 +41,29 @@ Readability counts.
 
 ~~~ python
 >>> langs = [
-    csharp,
-    java,
-    javascript,
-    php,
-    python,
-    ruby
+  csharp,
+  java,
+  javascript,
+  php,
+  python,
+  ruby
 ]
->>> langs = sorted(langs, key=lambda lang: lang.year)
+>>> langs = sorted(langs,
+                   key=lambda l: l.year)
 ~~~
 
 
 ## Answer
 
 ~~~ python
->>> [(lang.name, lang.year) for lang in langs]
+>>> [(l.name, l.year) for l in langs]
 [
-('python', 1991),
-('java', 1995),
-('javascript', 1995)
-('php', 1995),
-('ruby', 1995),
-('csharp', 2000)
+  ('python', 1991),
+  ('java', 1995),
+  ('javascript', 1995)
+  ('php', 1995),
+  ('ruby', 1995),
+  ('csharp', 2000)
 ]
 ~~~
 
@@ -76,7 +77,7 @@ Readability counts.
 - MTV architecture framework (==MVC)
 - Django Software Foundation
 - BSD license
-- Used in: Pinterest, Instagram, Mozilla, Bitbucket, Sentry
+- Used in: Pinterest, Instagram, Bitbucket, Sentry
 
 
 ## Trivia
@@ -87,11 +88,14 @@ Readability counts.
 ## Batteries included
 
 - core: ORM, urls, templates (pluggable), i18n, migrations
-- contrib apps: admin, auth, sessions, postgres specific (e.g. jsonb)
+- contrib apps: admin, auth, sessions, postgres (e.g. jsonb field)
 - tons of third party apps and libs
 
 
-## Better stay local
+# A (silly) Todo application
+
+
+## Environment setup
 
 ~~~
 $ sudo apt-get install python python-virtualenv
@@ -127,6 +131,7 @@ todo/migrations
 todo/migrations/__init__.py
 todo/__init__.py
 todo/templates
+todo/templates/todo
 todo/views.py
 todo/models.py
 todo/admin.py

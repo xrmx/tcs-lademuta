@@ -40,17 +40,30 @@ Readability counts.
 ## Question
 
 ~~~ python
->>> langs = [csharp, java, javascript, php, python, ruby]
->>> sorted(langs, key=lambda lang: lang.year)
+>>> langs = [
+    csharp,
+    java,
+    javascript,
+    php,
+    python,
+    ruby
+]
+>>> langs = sorted(langs, key=lambda lang: lang.year)
 ~~~
 
 
 ## Answer
 
 ~~~ python
-[python, java, javascript, php, ruby, csharp]
->>> [lang.year for lang in langs]
-[1991, 1995, 1995, 1995, 1995, 2000]
+>>> [(lang.name, lang.year) for lang in langs]
+[
+('python', 1991),
+('java', 1995),
+('javascript', 1995)
+('php', 1995),
+('ruby', 1995),
+('csharp', 2000)
+]
 ~~~
 
 
@@ -80,7 +93,7 @@ Readability counts.
 
 ## Better stay local
 
-~~~ console
+~~~
 $ sudo apt-get install python python-virtualenv
 $ virtualenv venv
 $ . venv/bin/activate
@@ -90,7 +103,7 @@ $ . venv/bin/activate
 
 ## Project bootstrapping
 
-~~~ console
+~~~
 $ django-admin startproject djangotcs
 $ find
 ./djangotcs
@@ -105,7 +118,7 @@ $ find
 
 ## Let's do something
 
-~~~ console
+~~~
 $ manage.py startapp todo
 $ mkdir -p todo/templates/todo
 $ find todo/
@@ -282,7 +295,7 @@ urlpatterns = patterns('',
 
 ## Migration time
 
-~~~ console
+~~~
 $ ./manage.py makemigrations todo
 Migrations for 'todo':
   0001_initial.py:
@@ -302,15 +315,19 @@ Running migrations:
 
 ## built-in http server with hot code reload
 
-~~~ console
+~~~
 $ ./manage.py runserver
 Performing system checks...
 
 System check identified no issues (0 silenced).
 
+
 September 16, 2015 - 22:00:50
+
 Django version 1.8.4, using settings 'djangotcs.settings'
+
 Starting development server at http://127.0.0.1:8000/
+
 Quit the server with CONTROL-C.
 ~~~
 

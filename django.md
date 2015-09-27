@@ -249,14 +249,20 @@ urlpatterns = [
 
 ## todo/admin.py
 
-CRUD for free
 ~~~ python
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 from .models import Todo, TodoItem
 
-admin.site.register(Todo)
-admin.site.register(TodoItem)
+class TodoItemInline(admin.StackedInline):
+    model = TodoItem
+
+class TodoAdmin(admin.ModelAdmin):
+    inlines = [
+        TodoItemInline,
+    ]
+
+admin.site.register(Todo, TodoAdmin)
 ~~~
 
 

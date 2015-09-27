@@ -37,7 +37,7 @@ Readability counts.
 [...]
 
 
-## Question
+## Quiz
 
 ~~~ python
 >>> langs = [
